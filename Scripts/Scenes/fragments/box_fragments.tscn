@@ -1,0 +1,236 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/fragments.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/fragment.gd" type="Script" id=2]
+[ext_resource path="res://sprites/sprites/crateWood.png" type="Texture" id=3]
+[ext_resource path="res://sprites/sprites/explosion1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/sprites/explosion2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/sprites/explosion3.png" type="Texture" id=6]
+[ext_resource path="res://sprites/sprites/explosion4.png" type="Texture" id=7]
+[ext_resource path="res://sprites/sprites/explosion5.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "explode"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("explosion:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ null, ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), null ]
+}
+
+[node name="box_fragments" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="fragment" type="RigidBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 0
+collision_mask = 4
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Collision" ]
+bouncing = 0.3
+
+[node name="poly" type="Polygon2D" parent="fragment" index="0"]
+
+polygon = PoolVector2Array( -13.7957, -13.3677, -13.9662, -7.91117, -13.881, -3.222, -13.7957, -0.579018, -9.02129, -0.237988, -4.84367, -2.28417, -6.63408, -5.95025, -2.28594, -7.6554, -0.495533, -10.1279, -0.32502, -13.9645, -7.48666, -13.7939 )
+uv = PoolVector2Array( 1.20428, 1.13234, 1.03377, 6.58883, 1.11902, 11.278, 1.20428, 13.921, 5.97871, 14.262, 10.1563, 12.2158, 8.36592, 8.54975, 12.7141, 6.8446, 14.5045, 4.37213, 14.675, 0.53554, 7.51334, 0.706055 )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = ExtResource( 3 )
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Texture" ]
+
+[node name="poly2" type="CollisionPolygon2D" parent="fragment" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -13.7957, -13.3677, -13.9662, -7.91117, -13.881, -3.222, -13.7957, -0.579018, -9.02129, -0.237988, -4.84367, -2.28417, -6.63408, -5.95025, -2.28594, -7.6554, -0.495533, -10.1279, -0.32502, -13.9645, -7.48666, -13.7939 )
+_sections_unfolded = [ "Texture" ]
+
+[node name="fragment2" type="RigidBody2D" parent="." index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 0
+collision_mask = 4
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Collision" ]
+bouncing = 0.3
+
+[node name="poly" type="Polygon2D" parent="fragment2" index="0"]
+
+polygon = PoolVector2Array( 0.527557, -13.7939, 0.0160103, -7.39963, -5.78151, -5.77973, -3.73532, -0.664276, 2.06219, -0.493759, 5.89878, -2.88097, 9.13857, -0.664276, 13.8277, -0.493759, 13.572, -14.2202 )
+uv = PoolVector2Array( 14.2776, 0.206055, 13.766, 6.60037, 7.96849, 8.22027, 10.0147, 13.3357, 15.8122, 13.5062, 19.6488, 11.119, 22.8886, 13.3357, 27.5777, 13.5062, 27.322, -0.220234 )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = ExtResource( 3 )
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Texture" ]
+
+[node name="poly2" type="CollisionPolygon2D" parent="fragment2" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0.527557, -13.7939, 0.0160103, -7.39963, -5.78151, -5.77973, -3.73532, -0.664276, 2.06219, -0.493759, 5.89878, -2.88097, 9.13857, -0.664276, 13.8277, -0.493759, 13.572, -14.2202 )
+_sections_unfolded = [ "Texture" ]
+
+[node name="fragment3" type="RigidBody2D" parent="." index="2"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 0
+collision_mask = 4
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Collision" ]
+bouncing = 0.3
+
+[node name="poly" type="Polygon2D" parent="fragment3" index="0"]
+
+polygon = PoolVector2Array( -13.8895, -0.306145, -13.9589, 13.7908, -0.278687, 13.8602, -0.417572, -0.44503, -4.09805, -0.44503, -5.07024, -1.62556, -8.54239, -0.0978165 )
+uv = PoolVector2Array( 0.610514, 13.6939, 0.541071, 27.7908, 14.2213, 27.8602, 14.0824, 13.555, 10.402, 13.555, 9.42976, 12.3744, 5.95761, 13.9022 )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = ExtResource( 3 )
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Texture" ]
+
+[node name="poly2" type="CollisionPolygon2D" parent="fragment3" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -13.8895, -0.306145, -13.9589, 13.7908, -0.278687, 13.8602, -0.417572, -0.44503, -4.09805, -0.44503, -5.07024, -1.62556, -8.54239, -0.0978165 )
+_sections_unfolded = [ "Texture" ]
+
+[node name="fragment4" type="RigidBody2D" parent="." index="3"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 0
+collision_mask = 4
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Collision" ]
+bouncing = 0.3
+
+[node name="poly" type="Polygon2D" parent="fragment4" index="0"]
+
+polygon = PoolVector2Array( 0.0991783, -0.375343, -0.0261688, 13.8512, 13.6364, 13.7259, 13.4483, -0.688704, 8.24656, -0.438015, 6.05303, -2.56887, 2.54339, -0.56336 )
+uv = PoolVector2Array( 13.8492, 13.6247, 13.7238, 27.8512, 27.3864, 27.7259, 27.1983, 13.3113, 21.9966, 13.562, 19.803, 11.4311, 16.2934, 13.4366 )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = ExtResource( 3 )
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Texture" ]
+
+[node name="poly2" type="CollisionPolygon2D" parent="fragment4" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0.0991783, -0.375343, -0.0261688, 13.8512, 13.6364, 13.7259, 13.4483, -0.688704, 8.24656, -0.438015, 6.05303, -2.56887, 2.54339, -0.56336 )
+_sections_unfolded = [ "Texture" ]
+
+[node name="explosion" type="Sprite" parent="." index="4"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="anim" type="AnimationPlayer" parent="." index="5"]
+
+root_node = NodePath("..")
+autoplay = "explode"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/explode = SubResource( 1 )
+blend_times = [  ]
+
+

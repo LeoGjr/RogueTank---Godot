@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/turret_bullet.gd" type="Script" id=1]
+[ext_resource path="res://sprites/rogue_tank_sprites_2/towerDefense_tile297.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 12.9968
+
+[node name="turret_bullet" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+collision_mask = 32
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="sprites" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 22.4832, 0 )
+
+[node name="sprite" type="Sprite" parent="sprites" index="0"]
+
+position = Vector2( 0, -7.10008 )
+rotation = -1.5708
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="sprite2" type="Sprite" parent="sprites" index="1"]
+
+position = Vector2( 0, 7.41563 )
+rotation = -1.5708
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 30.6877, 0 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="." to="." method="_on_turret_bullet_area_entered"]
+
+

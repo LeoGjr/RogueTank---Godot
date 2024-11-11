@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/radar_sqare.gd" type="Script" id=1]
+
+[node name="radar_sqare" type="ColorRect"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 899.0
+margin_top = 491.0
+margin_right = 1008.0
+margin_bottom = 581.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.504059, 0.777344, 0.674862, 1 )
+script = ExtResource( 1 )
+area_size = Vector2( 1920, 768 )
+
+[node name="timer update" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 0.01
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="timer update" to="." method="_on_timer_update_timeout"]
+
+

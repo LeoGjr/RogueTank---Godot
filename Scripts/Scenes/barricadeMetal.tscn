@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sprites/sprites/barricadeMetal.png" type="Texture" id=1]
+
+[node name="barricadeMetal" type="StaticBody2D"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 4
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="poly" type="CollisionPolygon2D" parent="." index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -13.8632, 8.31984, -4.12857, 0.0506172, -13.8632, -9.78871, -8.94356, -13.557, -0.255638, -3.71764, 9.58369, -12.9289, 12.7239, -9.57937, 3.93131, -0.682098, 12.7239, 8.84321, 8.95565, 13.2395, -0.0462914, 3.40018, -8.94356, 12.8208 )
+
+
